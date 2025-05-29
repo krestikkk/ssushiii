@@ -44,7 +44,7 @@
         <a href="menu.html">Меню</a>
         <a href="about.html">Про нас</a>
         <a href="reviews.html">Відгуки</a>
-        <a href="javascript:void(0)" class="cart-link" onclick="toggleCart()">Кошик (<span id="cartCount">0</span>)</a>
+        <a href="cart.html" class="cart-link">Кошик (<span id="cartCount">0</span>)</a>
     </nav>
 </header>
 
@@ -58,32 +58,39 @@
             <h3>Закуски</h3>
             <div class="menu-container">
                 <div class="menu-item">
+                                    <div class="id">1</div>
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/FuaGra.jpg" alt="Фуа-гра">
                     <h3>Фуа-гра</h3>
                     <p>Традиційна французька закуска з качиного або гусиного фуа-гра.</p>
-                    <p><b>Ціна: 1500₴</b></p>
-                    <button onclick="addToCart('Фуа-гра', 1500)">Додати до кошика</button>
+                    <p>Ціна: <b>1500</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">2</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/tartar-iz-lososya.jpg" alt="Тартар з лосося">
                     <h3>Тартар з лосося</h3>
                     <p>Свіжий лосось, оливкова олія, спеції.</p>
-                    <p><b>Ціна: 800₴</b></p>
-                    <button onclick="addToCart('Тартар з лосося', 800)">Додати до кошика</button>
+                    <p>Ціна:<b>800</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">3</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/kalmar.jpg" alt="Кальмари в клярі">
                     <h3>Кальмари в клярі</h3>
                     <p>Смажені кальмари з хрустким кляром.</p>
-                    <p><b>Ціна: 900₴</b></p>
-                    <button onclick="addToCart('Кальмари в клярі', 900)">Додати до кошика</button>
+                    <p>Ціна: <b>900</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">4</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/pashtet.jpg" alt="Паштет з курячої печінки">
                     <h3>Паштет з курячої печінки</h3>
                     <p>Класичний французький паштет з курячої печінки.</p>
-                    <p><b>Ціна: 700₴</b></p>
-                    <button onclick="addToCart('Паштет з курячої печінки', 700)">Додати до кошика</button>
+                    <p>Ціна: <b>700</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
             </div>
         </div>
@@ -92,32 +99,40 @@
             <h3>Основні страви</h3>
             <div class="menu-container">
                 <div class="menu-item">
+                                    <div class="id">5</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/bef.jpg" alt="Беф бургіньон">
                     <h3>Беф бургіньон</h3>
                     <p>Яловичина, тушкована в вині з овочами.</p>
-                    <p><b>Ціна: 1200₴</b></p>
-                    <button onclick="addToCart('Беф бургіньон', 1200)">Додати до кошика</button>
+                    <p>Ціна:<b>1200</b> ₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">6</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/mqdefault.jpg" alt="Ко-конес">
                     <h3>Ко-конес</h3>
                     <p>Тушкована курка з овочами в білому вині.</p>
-                    <p><b>Ціна: 950₴</b></p>
-                    <button onclick="addToCart('Ко-конес', 950)">Додати до кошика</button>
+                    <p>Ціна:<b>950</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">7</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/khek-v-tomat.jpg" alt="Рибний рагу">
                     <h3>Рибний рагу</h3>
                     <p>Риба з овочами в ароматному соусі.</p>
-                    <p><b>Ціна: 1050₴</b></p>
-                    <button onclick="addToCart('Рибний рагу', 1050)">Додати до кошика</button>
+                    <p>Ціна:<b>1050</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">8</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/Peking-duck.jpg" alt="Качка по-пекінськи">
                     <h3>Качка по-пекінськи</h3>
                     <p>Качка, запечена з хрусткою шкіркою та спеціями.</p>
-                    <p><b>Ціна: 1400₴</b></p>
-                    <button onclick="addToCart('Качка по-пекінськи', 1400)">Додати до кошика</button>
+                    <p>Ціна:<b>1400</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
             </div>
         </div>
@@ -126,32 +141,40 @@
             <h3>Десерти</h3>
             <div class="menu-container">
                 <div class="menu-item">
+                                    <div class="id">9</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/krem_brule-2.jpg" alt="Крем-брюле">
                     <h3>Крем-брюле</h3>
                     <p>Класичний французький десерт з ванільним кремом та хрусткою скоринкою.</p>
-                    <p><b>Ціна: 500₴</b></p>
-                    <button onclick="addToCart('Крем-брюле', 500)">Додати до кошика</button>
+                    <p>Ціна:<b>500</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">10</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/elegant-macarons.jpg" alt="Макарони">
                     <h3>Макарони</h3>
                     <p>Французькі мигдальні печива з різними начинками.</p>
-                    <p><b>Ціна: 350₴</b></p>
-                    <button onclick="addToCart('Макарони', 350)">Додати до кошика</button>
+                    <p>Ціна:<b>350</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">11</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/images_cms-image-000109252.jpg" alt="Тарт татен">
                     <h3>Тарт татен</h3>
                     <p>Французький десерт з карамелізованими яблуками.</p>
-                    <p><b>Ціна: 450₴</b></p>
-                    <button onclick="addToCart('Тарт татен', 450)">Додати до кошика</button>
+                    <p>Ціна:<b>450</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
                 <div class="menu-item">
+                                    <div class="id">12</div>
+
                     <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/35950949_m-2000x1200.jpg" alt="Шоколадний мус">
                     <h3>Шоколадний мус</h3>
                     <p>Ніжний шоколадний мус з ванільним соусом.</p>
-                    <p><b>Ціна: 550₴</b></p>
-                    <button onclick="addToCart('Шоколадний мус', 550)">Додати до кошика</button>
+                    <p>Ціна:<b>550</b>₴</p>
+                    <button data-cart class="btn-bye">Додати до кошика</button>
                 </div>
             </div>
         </div>
