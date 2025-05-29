@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню ресторану</title>
+    <link rel="stylesheet" href="style.css">
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closePaymentModal()" style="float: right; font-size: 24px; cursor: pointer;">&times;</span>
+          <h2>Оплата</h2>
+          <form onsubmit="processPayment(event)">
+            <label>Номер картки:</label>
+            <input type="text" pattern="\d{16}" required placeholder="1234567812345678"><br>
+      
+            <label>Термін дії (MM/YY):</label>
+            <input type="text" pattern="\d{2}/\d{2}" required placeholder="12/25"><br>
+      
+            <label>CVV:</label>
+            <input type="text" pattern="\d{3}" required placeholder="123"><br>
+      
+            <label>Ім’я на карті:</label>
+            <input type="text" required placeholder="Ivan Petrenko"><br><br>
+      
+            <button type="submit">Оплатити</button>
+          </form>
+        </div>
+      </div>
+</head>
+<body>
+    <div class="burger-menu" id="burgerMenu">
+        <div class="burger-content">
+            <a href="index.html">Головна</a>
+            <a href="menu.html">Меню</a>
+            <a href="about.html">Про нас</a>
+            <a href="reviews.html">Відгуки</a>
+            <a href="javascript:void(0)" onclick="openModal()">Забронювати столик</a>
+        </div>
+    </div>
+<header>
+    <div class="burger-icon" id="burgerIcon">☰</div>
+    <nav class="navbar">
+        <a href="index.html">Головна</a>
+        <a href="menu.html">Меню</a>
+        <a href="about.html">Про нас</a>
+        <a href="reviews.html">Відгуки</a>
+        <a href="javascript:void(0)" class="cart-link" onclick="toggleCart()">Кошик (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<main>
+    <section id="menu" class="menu">
+        <h2>Наше меню</h2>
+
+        <input type="text" id="searchInput" placeholder="🔍 Введіть назву страви..." onkeyup="searchMenu()">
+        
+        <div class="category">
+            <h3>Закуски</h3>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/FuaGra.jpg" alt="Фуа-гра">
+                    <h3>Фуа-гра</h3>
+                    <p>Традиційна французька закуска з качиного або гусиного фуа-гра.</p>
+                    <p><b>Ціна: 1500₴</b></p>
+                    <button onclick="addToCart('Фуа-гра', 1500)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/tartar-iz-lososya.jpg" alt="Тартар з лосося">
+                    <h3>Тартар з лосося</h3>
+                    <p>Свіжий лосось, оливкова олія, спеції.</p>
+                    <p><b>Ціна: 800₴</b></p>
+                    <button onclick="addToCart('Тартар з лосося', 800)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/kalmar.jpg" alt="Кальмари в клярі">
+                    <h3>Кальмари в клярі</h3>
+                    <p>Смажені кальмари з хрустким кляром.</p>
+                    <p><b>Ціна: 900₴</b></p>
+                    <button onclick="addToCart('Кальмари в клярі', 900)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/pashtet.jpg" alt="Паштет з курячої печінки">
+                    <h3>Паштет з курячої печінки</h3>
+                    <p>Класичний французький паштет з курячої печінки.</p>
+                    <p><b>Ціна: 700₴</b></p>
+                    <button onclick="addToCart('Паштет з курячої печінки', 700)">Додати до кошика</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Основні страви</h3>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/bef.jpg" alt="Беф бургіньон">
+                    <h3>Беф бургіньон</h3>
+                    <p>Яловичина, тушкована в вині з овочами.</p>
+                    <p><b>Ціна: 1200₴</b></p>
+                    <button onclick="addToCart('Беф бургіньон', 1200)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/mqdefault.jpg" alt="Ко-конес">
+                    <h3>Ко-конес</h3>
+                    <p>Тушкована курка з овочами в білому вині.</p>
+                    <p><b>Ціна: 950₴</b></p>
+                    <button onclick="addToCart('Ко-конес', 950)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/khek-v-tomat.jpg" alt="Рибний рагу">
+                    <h3>Рибний рагу</h3>
+                    <p>Риба з овочами в ароматному соусі.</p>
+                    <p><b>Ціна: 1050₴</b></p>
+                    <button onclick="addToCart('Рибний рагу', 1050)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/Peking-duck.jpg" alt="Качка по-пекінськи">
+                    <h3>Качка по-пекінськи</h3>
+                    <p>Качка, запечена з хрусткою шкіркою та спеціями.</p>
+                    <p><b>Ціна: 1400₴</b></p>
+                    <button onclick="addToCart('Качка по-пекінськи', 1400)">Додати до кошика</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Десерти</h3>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/krem_brule-2.jpg" alt="Крем-брюле">
+                    <h3>Крем-брюле</h3>
+                    <p>Класичний французький десерт з ванільним кремом та хрусткою скоринкою.</p>
+                    <p><b>Ціна: 500₴</b></p>
+                    <button onclick="addToCart('Крем-брюле', 500)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/elegant-macarons.jpg" alt="Макарони">
+                    <h3>Макарони</h3>
+                    <p>Французькі мигдальні печива з різними начинками.</p>
+                    <p><b>Ціна: 350₴</b></p>
+                    <button onclick="addToCart('Макарони', 350)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/images_cms-image-000109252.jpg" alt="Тарт татен">
+                    <h3>Тарт татен</h3>
+                    <p>Французький десерт з карамелізованими яблуками.</p>
+                    <p><b>Ціна: 450₴</b></p>
+                    <button onclick="addToCart('Тарт татен', 450)">Додати до кошика</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/images/35950949_m-2000x1200.jpg" alt="Шоколадний мус">
+                    <h3>Шоколадний мус</h3>
+                    <p>Ніжний шоколадний мус з ванільним соусом.</p>
+                    <p><b>Ціна: 550₴</b></p>
+                    <button onclick="addToCart('Шоколадний мус', 550)">Додати до кошика</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Ваш кошик</h2>
+            <div id="cartItems"></div>
+            <p><b>Загальна сума: <span id="totalPrice">0</span>₴</b></p>
+            <button onclick="checkout()">Оформити замовлення</button>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Luxe & Lace</h3>
+        <a href="about.html">Про нас</a>
+        <a href="reviews.html">Відгуки</a>
+        <a href="menu.html">Меню</a>
+    </div>
+
+    <div class="footer-column">
+        <h3>Отримати допомогу</h3>
+        <a href="">Написати в підтримку</a>
+    </div>
+
+    <div class="footer-column">
+        <h3>Новини та акції</h3>
+        <a href="">Блог</a>
+        <a href="">Знижки</a>
+        <a href="">Новинки</a>
+    </div>
+    
+
+    <div class="footer-column">
+        <h3>Follow us</h3>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
