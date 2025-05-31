@@ -40,7 +40,7 @@ header {
 /*osnovnaya chast`*/
 
 .hero {
-    background: url('https://raw.githubusercontent.com/n3doter/SchoolProjectV2/main/d36f4720-d858-4565-893e-e8fb2da79d17.png')center/cover no-repeat;
+    background: url('./0000000000000000008_60b22d6ed00b2.jpg')center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -359,6 +359,11 @@ button:hover {
 .highlight {
     background-color: yellow;
     font-weight: bold;
+}
+
+.id {
+
+    display: none;
 }
 
 
